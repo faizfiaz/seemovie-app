@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/example_backdrop"
+        android:tint="@color/transColorAccent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_slarge">
+
+        <com.selfcompany.faizf.newbase.utils.custom.textview.CustomTextViewBold
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Red Sparrow"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_ml" />
+
+        <com.selfcompany.faizf.newbase.utils.custom.textview.CustomTextViewRegular
+            android:id="@+id/overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="The story of August Pullman – a boy with facial differences – who enters fifth grade, attending a mainstream elementary school for the first time"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_sm" />
+
+        <LinearLayout
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_xsmall">
+
+            <com.selfcompany.faizf.newbase.utils.custom.textview.CustomTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Read synopsis"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_s" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/colorPrimary" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

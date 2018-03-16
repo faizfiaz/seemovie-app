@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03A678</color>
+    <color name="colorPrimaryDark">#019875</color>
+    <color name="colorAccent">#150e2a</color>
+
+    <color name="transColorAccent">#aa150e2a</color>
+    <color name="transDeepColorAccent">#ee150e2a</color>
+
+    <color name="darkGrey">#1e1735</color>
+    <color name="darkGreyer">#5b5b5c</color>
+
+</resources>

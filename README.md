@@ -1,4 +1,4 @@
-# seemovie-app
+# See Movie App
 Hello guys!
 
 This app is my showcase app. This app using Kotlin + MVP Pattern + Clean Architecture

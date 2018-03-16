@@ -41,7 +41,7 @@ class NowPlayingMapper @Inject constructor(private val context: Context) {
     private fun transformUpcoming(movieEntity: MovieEntity): UpcomingItem? {
         var upcomingItem : UpcomingItem? = null
         if(movieEntity != null){
-            upcomingItem = UpcomingItem(movieEntity.id, movieEntity.title, movieEntity.backdrop_path,movieEntity.poster_path, movieEntity.popularity,
+            upcomingItem = UpcomingItem(movieEntity.id, movieEntity.title, movieEntity.poster_path,movieEntity.backdrop_path, movieEntity.popularity,
                     movieEntity.genre_ids, movieEntity.overview, movieEntity.release_date, movieEntity.vote_average, movieEntity.vote_count)
         }
         return upcomingItem
@@ -50,7 +50,7 @@ class NowPlayingMapper @Inject constructor(private val context: Context) {
     private fun transformTopRated(movieEntity: MovieEntity): TopRatedItem? {
         var topRatedItem : TopRatedItem? = null
         if(movieEntity != null){
-            topRatedItem = TopRatedItem(movieEntity.id, movieEntity.title, movieEntity.backdrop_path,movieEntity.poster_path, movieEntity.popularity,
+            topRatedItem = TopRatedItem(movieEntity.id, movieEntity.title, movieEntity.poster_path,movieEntity.backdrop_path, movieEntity.popularity,
                     movieEntity.genre_ids, movieEntity.overview, movieEntity.release_date, movieEntity.vote_average, movieEntity.vote_count)
         }
         return topRatedItem

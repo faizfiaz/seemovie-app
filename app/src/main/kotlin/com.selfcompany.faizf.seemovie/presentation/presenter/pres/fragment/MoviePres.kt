@@ -18,6 +18,7 @@ import com.selfcompany.faizf.seemovie.domain.model.UpcomingItem
 import com.selfcompany.faizf.seemovie.presentation.presenter.observer.GenericObserver
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.BasePresenter
 import com.selfcompany.faizf.seemovie.presentation.view.activity.DetailMovieActivity
+import com.selfcompany.faizf.seemovie.presentation.view.activity.SeeMoreActivity
 import com.selfcompany.faizf.seemovie.presentation.view.fragment.MovieFragment
 import javax.inject.Inject
 
@@ -109,6 +110,12 @@ class MoviePres @Inject constructor(private val context: Context) : BasePresente
     fun goToDetail(any: Any) {
         val intent = Intent(context, DetailMovieActivity::class.java)
         intent.putExtra("id", any.toString())
+        context.startActivity(intent)
+    }
+
+    fun goMore(s: String) {
+        val intent = Intent(context, SeeMoreActivity::class.java)
+        intent.putExtra("from", s)
         context.startActivity(intent)
     }
 }

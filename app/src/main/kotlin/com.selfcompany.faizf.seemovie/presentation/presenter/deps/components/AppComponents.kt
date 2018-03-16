@@ -4,11 +4,13 @@ import com.selfcompany.faizf.seemovie.SeeMovieApp
 import com.selfcompany.faizf.seemovie.presentation.presenter.deps.module.*
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.activity.DetailMoviePres
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.activity.MainPres
+import com.selfcompany.faizf.seemovie.presentation.presenter.pres.activity.SeeMorePres
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.fragment.AccountPres
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.fragment.CinemasPres
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.fragment.MoviePres
 import com.selfcompany.faizf.seemovie.presentation.view.activity.DetailMovieActivity
 import com.selfcompany.faizf.seemovie.presentation.view.activity.MainActivity
+import com.selfcompany.faizf.seemovie.presentation.view.activity.SeeMoreActivity
 import com.selfcompany.faizf.seemovie.presentation.view.fragment.AccountFragment
 import com.selfcompany.faizf.seemovie.presentation.view.fragment.CinemasFragment
 import com.selfcompany.faizf.seemovie.presentation.view.fragment.MovieFragment
@@ -33,12 +35,18 @@ interface AppComponents {
     fun inject(seeMoviesApp: SeeMovieApp)
     fun inject(sliderFragment: SliderFragment)
 
+    //ACTIVITY INJECTION
     fun inject(mainActivity: MainActivity)
     fun inject(mainPres: MainPres)
 
     fun inject(detailMovieActivity: DetailMovieActivity)
     fun inject(detailMoviePres: DetailMoviePres)
 
+    fun inject(seeMoreActivity: SeeMoreActivity)
+    fun inject(seeMorePres: SeeMorePres)
+
+
+    //FRAGMENT INJECTION
     fun inject(movieFragment: MovieFragment)
     fun inject(moviePres: MoviePres)
 

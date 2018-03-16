@@ -63,6 +63,8 @@
                 <com.selfcompany.faizf.newbase.utils.custom.textview.CustomTextViewBold
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:id="@+id/morePopular"
                     android:padding="@dimen/padding_slarge"
                     android:text="See More"
                     android:textColor="@color/colorPrimary"
@@ -99,6 +101,8 @@
                 <com.selfcompany.faizf.newbase.utils.custom.textview.CustomTextViewBold
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:id="@+id/moreTop"
                     android:padding="@dimen/padding_slarge"
                     android:text="See More"
                     android:textColor="@color/colorPrimary"
@@ -136,6 +140,8 @@
                 <com.selfcompany.faizf.newbase.utils.custom.textview.CustomTextViewBold
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:id="@+id/moreUpcoming"
                     android:padding="@dimen/padding_slarge"
                     android:text="See More"
                     android:textColor="@color/colorPrimary"

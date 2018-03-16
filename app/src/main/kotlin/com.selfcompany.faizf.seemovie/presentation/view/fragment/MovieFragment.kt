@@ -45,6 +45,9 @@ class MovieFragment : BaseFragment(), CallbackItemClicked{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         presenter.getData()
+        moreTop.setOnClickListener { presenter.goMore("top") }
+        moreUpcoming.setOnClickListener { presenter.goMore("upcoming") }
+        morePopular.setOnClickListener { presenter.goMore("popular") }
     }
 
     var currentPage = 0
@@ -131,5 +134,7 @@ class MovieFragment : BaseFragment(), CallbackItemClicked{
     override fun onClicked(any: Any) {
         presenter.goToDetail(any)
     }
+
+
 
 }

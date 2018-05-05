@@ -10,8 +10,8 @@ import io.reactivex.Observable
  * Created by faizf on 07/03/2018.
  */
 interface MovieListRepository {
-    fun nowPlaying(isRefresh: Boolean) :  Observable<MutableList<NowPlayingItem>>
-    fun topRated(isRefresh: Boolean) : Observable<MutableList<TopRatedItem>>
-    fun popular(isRefresh: Boolean) : Observable<MutableList<PopularItem>>
-    fun upcoming(isRefresh: Boolean) : Observable<MutableList<UpcomingItem>>
+    fun nowPlaying(isRefresh: Boolean, int: Int) :  Observable<MutableList<NowPlayingItem>>
+    fun topRated(isRefresh: Boolean, int: Int) : Observable<MutableList<TopRatedItem>>
+    fun popular(isRefresh: Boolean, int: Int) : Observable<MutableList<PopularItem>>
+    fun upcoming(isRefresh: Boolean, int: Int) : Observable<MutableList<UpcomingItem>>
 }

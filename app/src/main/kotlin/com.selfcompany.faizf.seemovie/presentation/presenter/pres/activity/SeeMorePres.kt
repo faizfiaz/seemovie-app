@@ -8,10 +8,6 @@ import com.selfcompany.faizf.seemovie.SeeMovieApp
 import com.selfcompany.faizf.seemovie.domain.interactor.GetPopular
 import com.selfcompany.faizf.seemovie.domain.interactor.GetTopRated
 import com.selfcompany.faizf.seemovie.domain.interactor.GetUpcoming
-import com.selfcompany.faizf.seemovie.domain.model.NowPlayingItem
-import com.selfcompany.faizf.seemovie.domain.model.PopularItem
-import com.selfcompany.faizf.seemovie.domain.model.TopRatedItem
-import com.selfcompany.faizf.seemovie.domain.model.UpcomingItem
 import com.selfcompany.faizf.seemovie.presentation.presenter.observer.GenericObserver
 import com.selfcompany.faizf.seemovie.presentation.presenter.pres.BasePresenter
 import com.selfcompany.faizf.seemovie.presentation.view.activity.DetailMovieActivity
@@ -52,12 +48,19 @@ class SeeMorePres @Inject constructor(private val context: Context) :BasePresent
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    fun getData(stringExtra: String?) {
-        mView?.createLoading()
+    lateinit var bundle: Bundle
+
+    fun getData(stringExtra: String?, i: Int) {
+        if (i == 1) {
+            mView?.createLoading()
+        }
+        bundle = Bundle()
+        bundle.putBoolean("condition", true)
+        bundle.putInt("page", i)
         when(stringExtra){
-            "top" -> getTopRated.execute(GenericObserver(this), false)
-            "popular" -> getPopular.execute(GenericObserver(this), false)
-            "upcoming" -> getUpcoming.execute(GenericObserver(this), false)
+            "top" -> getTopRated.execute(GenericObserver(this), bundle)
+            "popular" -> getPopular.execute(GenericObserver(this), bundle)
+            "upcoming" -> getUpcoming.execute(GenericObserver(this), bundle)
         }
     }
 
@@ -75,4 +78,5 @@ class SeeMorePres @Inject constructor(private val context: Context) :BasePresent
         intent.putExtra("id", any.toString())
         context.startActivity(intent)
     }
+
 }

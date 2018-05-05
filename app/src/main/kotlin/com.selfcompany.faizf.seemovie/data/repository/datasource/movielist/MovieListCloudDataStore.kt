@@ -16,17 +16,18 @@ import io.reactivex.schedulers.Schedulers
  */
 class MovieListCloudDataStore(private val movieListCache: MovieListCache,
                               private val context: Context,
-                              private val category: CategoryListMovie) : MovieListDataStore {
+                              private val category: CategoryListMovie,
+                              private val int: Int) : MovieListDataStore {
 
     private lateinit var url: String
 
     override fun listMovie(): Observable<MovieListEntity>? {
 
         url = when(category){
-            CategoryListMovie.NOW_PLAYING -> URL.nowPlaying
-            CategoryListMovie.TOP_RATED -> URL.topRated
-            CategoryListMovie.POPULAR -> URL.popular
-            CategoryListMovie.UPCOMING -> URL.upcoming
+            CategoryListMovie.NOW_PLAYING -> URL.nowPlayingPage(int)
+            CategoryListMovie.TOP_RATED -> URL.topRatedPage(int)
+            CategoryListMovie.POPULAR -> URL.popularPage(int)
+            CategoryListMovie.UPCOMING -> URL.upcomingPage(int)
         }
 
         return RetrofitService.getClient(context)?.create(RestApi::class.java)?.doGetListMovie(url)

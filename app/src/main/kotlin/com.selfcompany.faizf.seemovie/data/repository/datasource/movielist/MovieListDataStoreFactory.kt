@@ -11,15 +11,15 @@ import javax.inject.Inject
 class MovieListDataStoreFactory @Inject constructor(private val movieListCache: MovieListCache,
                                                     private val context: Context) {
 
-    fun create(isRefresh: Boolean, category: CategoryListMovie): MovieListDataStore {
+    fun create(isRefresh: Boolean, category: CategoryListMovie, int: Int): MovieListDataStore {
       // return MovieListCloudDataStore(movieListCache, context, category)
         return if (isRefresh) {
-            MovieListCloudDataStore(movieListCache, context, category)
+            MovieListCloudDataStore(movieListCache, context, category, int)
         } else {
             if (!movieListCache.isExpired() && movieListCache.isCached()) {
                 MovieListLocalDataStore(movieListCache, category)
             } else {
-                MovieListCloudDataStore(movieListCache, context, category)
+                MovieListCloudDataStore(movieListCache, context, category, int)
             }
         }
     }

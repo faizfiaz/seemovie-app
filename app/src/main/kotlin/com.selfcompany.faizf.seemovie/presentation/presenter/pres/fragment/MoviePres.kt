@@ -41,11 +41,16 @@ class MoviePres @Inject constructor(private val context: Context) : BasePresente
         fetchData()
     }
 
+    lateinit var bundle: Bundle
+
     fun fetchData(){
-        getNowPlaying.execute(GenericObserver(this), false)
-        getTopRated.execute(GenericObserver(this), false)
-        getPopular.execute(GenericObserver(this),false)
-        getUpcoming.execute(GenericObserver(this), false)
+        bundle = Bundle()
+        bundle.putBoolean("condition", true)
+        bundle.putInt("page", 1)
+        getNowPlaying.execute(GenericObserver(this), bundle)
+        getTopRated.execute(GenericObserver(this), bundle)
+        getPopular.execute(GenericObserver(this),bundle)
+        getUpcoming.execute(GenericObserver(this), bundle)
     }
 
     fun disposeAll(){

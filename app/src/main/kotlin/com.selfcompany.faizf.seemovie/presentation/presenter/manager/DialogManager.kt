@@ -20,7 +20,7 @@ class DialogManager @Inject constructor(private val context: Context){
             dialog.show()
         }else{
             dialog.dismissWithAnimation()
-            dialog.show()
+            //dialog.show()
         }
         return dialog
     }

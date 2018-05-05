@@ -75,40 +75,40 @@ class MovieListCacheImpl : MovieListCache {
 
 
     override fun put(item: MovieListEntity, category: CategoryListMovie) {
-        val realm = Realm.getDefaultInstance()
-        val json = Gson().toJson(item.results)
-
-        when (category) {
-            CategoryListMovie.NOW_PLAYING -> {
-                realm.executeTransactionAsync({ realm ->
-                    val movieRealm = realm.createObject<MovieRealm>(1)
-                    movieRealm.json = json
-                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
-                })
-
-            }
-            CategoryListMovie.TOP_RATED -> {
-                realm.executeTransactionAsync({ realm ->
-                    val movieRealm = realm.createObject<MovieRealm>(2)
-                    movieRealm.json = json
-                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
-                })
-            }
-            CategoryListMovie.POPULAR -> {
-                realm.executeTransactionAsync({ realm ->
-                    val movieRealm = realm.createObject<MovieRealm>(3)
-                    movieRealm.json = json
-                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
-                })
-            }
-            CategoryListMovie.UPCOMING -> {
-                realm.executeTransactionAsync({ realm ->
-                    val movieRealm = realm.createObject<MovieRealm>(4)
-                    movieRealm.json = json
-                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
-                })
-            }
-        }
+//        val realm = Realm.getDefaultInstance()
+//        val json = Gson().toJson(item.results)
+//
+//        when (category) {
+//            CategoryListMovie.NOW_PLAYING -> {
+//                realm.executeTransactionAsync({ realm ->
+//                    val movieRealm = realm.createObject<MovieRealm>(1)
+//                    movieRealm.json = json
+//                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
+//                })
+//
+//            }
+//            CategoryListMovie.TOP_RATED -> {
+//                realm.executeTransactionAsync({ realm ->
+//                    val movieRealm = realm.createObject<MovieRealm>(2)
+//                    movieRealm.json = json
+//                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
+//                })
+//            }
+//            CategoryListMovie.POPULAR -> {
+//                realm.executeTransactionAsync({ realm ->
+//                    val movieRealm = realm.createObject<MovieRealm>(3)
+//                    movieRealm.json = json
+//                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
+//                })
+//            }
+//            CategoryListMovie.UPCOMING -> {
+//                realm.executeTransactionAsync({ realm ->
+//                    val movieRealm = realm.createObject<MovieRealm>(4)
+//                    movieRealm.json = json
+//                    movieRealm.lastUpdated = Date(System.currentTimeMillis()).time
+//                })
+//            }
+//        }
     }
 
 }

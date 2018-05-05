@@ -39,7 +39,7 @@ class AdapterUpcoming(private val list: MutableList<UpcomingItem>,
             RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         fun bindItems(items: UpcomingItem) {
-            Picasso.with(itemView.context).load("https://image.tmdb.org/t/p/w500" + items.backdropPath).into(itemView.image)
+            Picasso.with(itemView.context).load("https://image.tmdb.org/t/p/w500" + items.posterPath).into(itemView.image)
             itemView.date.text = changeDate(items.releaseDate)
             itemView.tag = items.id
 

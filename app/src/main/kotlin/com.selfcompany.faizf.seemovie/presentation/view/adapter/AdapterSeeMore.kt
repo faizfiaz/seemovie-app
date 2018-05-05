@@ -16,25 +16,38 @@ import kotlinx.android.synthetic.main.adapter_see_more.view.*
 /**
  * Created by faizf on 16/03/2018.
  */
-class AdapterSeeMore<T>(private val list: MutableList<T>,
-                        private val context: Context,
+class AdapterSeeMore<T>(private var list: MutableList<T>,
                         private val callbackItemClicked: CallbackItemClicked) : RecyclerView.Adapter<AdapterSeeMore.ViewHolder>() {
+
+
+    companion object {
+        val ITEM_VIEW_TYPE_CONTENT = 1
+        val ITEM_VIEW_TYPE_LOADING = 2
+    }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.bindItems(list[position])
+            holder?.bindItems(list[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent?.context).inflate(R.layout.adapter_see_more, parent, false)
-        return ViewHolder(v, callbackItemClicked)
+        if (viewType == ITEM_VIEW_TYPE_CONTENT || viewType == 0) {
+            val v = LayoutInflater.from(parent?.context).inflate(R.layout.adapter_see_more, parent, false)
+            return ViewHolder(v, callbackItemClicked)
+        }else{
+            val v = LayoutInflater.from(parent?.context).inflate(R.layout.adapter_load_more, parent, false)
+            return ViewHolderLoading(v)
+        }
     }
 
 
-    class ViewHolder(itemView: View, private val callbackItemClicked: CallbackItemClicked) :
+    class ViewHolderLoading(itemView: View) : ViewHolder(itemView, null)
+
+
+    open class ViewHolder(itemView: View, private val callbackItemClicked: CallbackItemClicked?) :
             RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         fun bindItems(items: Any?) {
@@ -56,8 +69,15 @@ class AdapterSeeMore<T>(private val list: MutableList<T>,
         }
 
         override fun onClick(p0: View?) {
-            callbackItemClicked.onClicked(itemView.tag)
+            callbackItemClicked?.onClicked(itemView.tag)
         }
 
+    }
+
+    fun addData(item: MutableList<T>) {
+        val oldSize = list.size
+        list.addAll(item)
+//        notifyItemInserted(list.size)
+        notifyItemRangeChanged(oldSize, item.size)
     }
 }

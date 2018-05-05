@@ -11,20 +11,20 @@ import javax.inject.Inject
  */
 class MovieListDataRepository @Inject constructor(private val dataFactory: MovieListDataStoreFactory,
                                                   private val mapper : NowPlayingMapper) : MovieListRepository{
-    override fun upcoming(isRefresh: Boolean): Observable<MutableList<UpcomingItem>> {
-        return dataFactory.create(isRefresh, CategoryListMovie.UPCOMING).listMovie()!!.map({ it -> mapper.transformList<UpcomingItem>(it.results, CategoryListMovie.UPCOMING) })
+    override fun upcoming(isRefresh: Boolean, int: Int): Observable<MutableList<UpcomingItem>> {
+        return dataFactory.create(isRefresh, CategoryListMovie.UPCOMING, int).listMovie()!!.map({ it -> mapper.transformList<UpcomingItem>(it.results, CategoryListMovie.UPCOMING) })
     }
 
-    override fun popular(isRefresh: Boolean): Observable<MutableList<PopularItem>> {
-        return dataFactory.create(isRefresh, CategoryListMovie.POPULAR).listMovie()!!.map({ it -> mapper.transformList<PopularItem>(it.results, CategoryListMovie.POPULAR) })
+    override fun popular(isRefresh: Boolean, int: Int): Observable<MutableList<PopularItem>> {
+        return dataFactory.create(isRefresh, CategoryListMovie.POPULAR, int).listMovie()!!.map({ it -> mapper.transformList<PopularItem>(it.results, CategoryListMovie.POPULAR) })
     }
 
-    override fun topRated(isRefresh: Boolean): Observable<MutableList<TopRatedItem>> {
-        return dataFactory.create(isRefresh, CategoryListMovie.TOP_RATED).listMovie()!!.map({ it -> mapper.transformList<TopRatedItem>(it.results, CategoryListMovie.TOP_RATED) })
+    override fun topRated(isRefresh: Boolean, int: Int): Observable<MutableList<TopRatedItem>> {
+        return dataFactory.create(isRefresh, CategoryListMovie.TOP_RATED, int).listMovie()!!.map({ it -> mapper.transformList<TopRatedItem>(it.results, CategoryListMovie.TOP_RATED) })
     }
 
-    override fun nowPlaying(isRefresh: Boolean): Observable<MutableList<NowPlayingItem>> {
-        return dataFactory.create(isRefresh, CategoryListMovie.NOW_PLAYING).listMovie()!!.map({ it -> mapper.transformList<NowPlayingItem>(it.results, CategoryListMovie.NOW_PLAYING) })
+    override fun nowPlaying(isRefresh: Boolean, int: Int): Observable<MutableList<NowPlayingItem>> {
+        return dataFactory.create(isRefresh, CategoryListMovie.NOW_PLAYING, int).listMovie()!!.map({ it -> mapper.transformList<NowPlayingItem>(it.results, CategoryListMovie.NOW_PLAYING) })
     }
 
 

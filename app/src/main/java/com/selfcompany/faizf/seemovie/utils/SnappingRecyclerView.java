@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
+
 import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_FLING;
 import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL;
 
@@ -19,7 +21,7 @@ import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCR
  * Created by faizf on 09/03/2018.
  */
 
-public class SnappingRecyclerView extends RecyclerView {
+public class SnappingRecyclerView extends ShimmerRecyclerView {
 
     private boolean _userScrolling = false;
     private boolean _scrolling = false;

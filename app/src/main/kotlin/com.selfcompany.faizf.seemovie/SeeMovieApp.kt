@@ -1,8 +1,8 @@
 package com.selfcompany.faizf.seemovie
 
 import android.app.Application
-import com.selfcompany.faizf.seemovie.presentation.presenter.deps.components.DaggerAppComponents
-import com.selfcompany.faizf.seemovie.presentation.presenter.deps.module.*
+import com.selfcompany.faizf.seemovie.implementor.presenter.deps.components.DaggerAppComponents
+import com.selfcompany.faizf.seemovie.implementor.presenter.deps.module.*
 import io.realm.Realm
 import io.realm.RealmConfiguration
 

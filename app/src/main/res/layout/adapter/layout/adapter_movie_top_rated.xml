@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/example_backdrop"
+        android:src="@color/colorPrimaryDark"
         android:tint="@color/transColorAccent" />
 
     <LinearLayout
@@ -29,7 +29,6 @@
             android:paddingLeft="@dimen/padding_xmsmall"
             android:paddingRight="@dimen/padding_xmsmall"
             android:paddingTop="@dimen/padding_xxsmall"
-            android:text="2017"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_xms" />
 
@@ -38,7 +37,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="Red Sparrow"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
@@ -75,7 +73,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:includeFontPadding="false"
-                android:text="483 VOTES"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text_xs" />
 
@@ -87,7 +84,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="8.2"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_xl" />
 

@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/darkGrey"
     android:orientation="vertical">
 
@@ -74,7 +75,11 @@
             <com.selfcompany.faizf.seemovie.utils.SnappingRecyclerView
                 android:id="@+id/popularMovieList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:shimmer_demo_child_count="10"
+                app:shimmer_demo_layout="@layout/adapter_movie_popular"
+                app:shimmer_demo_layout_manager_type="linear_horizontal"
+                app:shimmer_demo_angle="20"/>
 
         </LinearLayout>
 
@@ -109,10 +114,14 @@
                     android:textSize="@dimen/text_s" />
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
                 android:id="@+id/topRatedList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:shimmer_demo_child_count="3"
+                app:shimmer_demo_layout="@layout/adapter_movie_top_rated"
+                app:shimmer_demo_layout_manager_type="linear_horizontal"
+                app:shimmer_demo_angle="20"/>
 
         </LinearLayout>
 
@@ -148,10 +157,14 @@
                     android:textSize="@dimen/text_s" />
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
                 android:id="@+id/upcomingList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:shimmer_demo_child_count="5"
+                app:shimmer_demo_layout="@layout/adapter_movie_upcoming"
+                app:shimmer_demo_layout_manager_type="linear_horizontal"
+                app:shimmer_demo_angle="20"/>
 
         </LinearLayout>
 

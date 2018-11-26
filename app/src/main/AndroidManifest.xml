@@ -3,7 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.selfcompany.faizf.seemovie">
 
+
+    <supports-screens android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+
     <application
+
         tools:replace="android:icon"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.view.activity.MainActivity"
+
+
+        <activity android:name="com.selfcompany.faizf.seemovie.presentation.maincontainer.MainActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.view.activity.DetailMovieActivity" android:configChanges="orientation|screenSize"/>
-        <activity android:name=".presentation.view.activity.SeeMoreActivity"/>
+        <activity android:name="com.selfcompany.faizf.seemovie.presentation.detailmovie.DetailMovieActivity" android:configChanges="orientation|screenSize"/>
+        <activity android:name="com.selfcompany.faizf.seemovie.presentation.seemore.SeeMoreActivity"/>
     </application>
 
 </manifest>

@@ -1,6 +1,6 @@
 package com.selfcompany.faizf.seemovie.domain.interactor
 
-import com.selfcompany.faizf.seemovie.presentation.presenter.observer.GenericObserver
+import com.selfcompany.faizf.seemovie.implementor.presenter.observer.GenericObserver
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

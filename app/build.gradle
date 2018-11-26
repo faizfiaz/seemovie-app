@@ -14,7 +14,7 @@ def versionPatch = 0
 def versionBuild = 1
 def versionString  = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
 
-project.ext.set "archivesBaseName", "ragam-indo-seller-app-" + versionString
+project.ext.set "archivesBaseName", "see-movie-" + versionString
 
 android {
     flavorDimensions "default"
@@ -79,7 +79,11 @@ android {
                     'src/main/res/layout/custom/layout/spinner',
                     'src/main/res/layout/content',
                     'src/main/res/layout/dialog',
-                    'src/main/res/layout/fragment'
+                    'src/main/res/layout/fragment',
+                    'src/main/res/layout-sw600dp',
+                    'src/main/res/layout-sw720dp',
+                    'src/main/res/layout-sw600dp/adapter',
+                    'src/main/res/layout-sw720dp/adapter',
             ]
         }
     }
@@ -88,30 +92,6 @@ android {
         abortOnError false
     }
 
-    sourceSets {
-        main {
-            res.srcDirs = [
-                    'src/main/res/',
-                    'src/main/res/layout/',
-                    'src/main/res/layout/activity/layout/login',
-                    'src/main/res/layout/activity/layout/drawer',
-                    'src/main/res/layout/activity/layout/menu',
-                    'src/main/res/layout/activity/layout/register',
-                    'src/main/res/layout/activity/layout',
-                    'src/main/res/layout/activity',
-                    'src/main/res/layout/other',
-                    'src/main/res/layout/adapter',
-                    'src/main/res/layout/content/layout/intro',
-                    'src/main/res/layout/content/layout',
-                    'src/main/res/layout/content',
-                    'src/main/res/layout/dialog',
-                    'src/main/res/layout/custom',
-                    'src/main/res/layout/custom/layout',
-                    'src/main/res/layout/custom/layout/spinner',
-                    'src/main/res/layout/fragment',
-            ]
-        }
-    }
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
         exclude 'META-INF/DEPENDENCIES'
